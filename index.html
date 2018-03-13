@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Peerings - ASN: {{ asn }}</title>
+	</head>
+<body>
+	<h1>Peerings for {{ asn }}</h1>
+	{% if peeringdb_list %}
+		<ul>
+			{% for peering in peeringdb_list}
+				ili> {{ peering.peeringnode }} {{peering.ipv4addr }} {{peering.ipv6addr }}</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No peerings found.</p>
+	{% endif %}
+</body>
+</html>
